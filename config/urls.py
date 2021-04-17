@@ -7,10 +7,11 @@ from django.views.generic import TemplateView
 from rest_framework import routers
 
 from cars.views import CarViewSet
-from posters.views import list_posters
+from posters.views import list_posters, PosterViewSet
 
 router = routers.SimpleRouter()
 router.register('api/v1/cars',CarViewSet)
+router.register('api/v1/posters',PosterViewSet)
 
 urlpatterns = [
     path('',TemplateView.as_view(template_name='_base.html'),name='home'),
