@@ -3,8 +3,15 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.views.generic import DetailView
+from rest_framework import viewsets
 
 from cars.models import Car
+from cars.serializers import CarSerializer
+
+
+class CarViewSet(viewsets.ModelViewSet):
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
 
 
 def list_car(request):
