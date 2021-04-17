@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+Car list
+{% endblock title%}
+<h2>Все постеры в БД</h2>
+
+{% block content %}
+
+{% for poster in posters %}
+    <img src="{{ poster.img.url }}"  class="rounded mx-auto d-block" width="200" height="200" alt="картинка...">
+{% endfor %}
+
+
+{% endblock content%}

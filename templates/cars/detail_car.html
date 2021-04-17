@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+Car detail
+{% endblock title%}
+
+{% block content %}
+<h2>Страница автомобиля</h2>
+<div class="btn btn-success btn-lg">
+    <p>Хозяин: {{ car.user }}</p>
+    <p>Марка: {{ car.manufacturer }}</p>
+    <p>Модель: {{ car.model }}</p>
+    <img src="{{ car.image.url }}" width="200" height="200" alt="Картинка авто"/>
+    <p>Дата выпуска: {{ car.made_data }}</p>
+    <p>Пробег: {{ car.milleage }} км</p>
+    <p>Цена: {{ car.price }} $</p>
+</div>
+<div>
+    <p>Все картинки авто:</p>
+    {% for car in car.cars.all %}
+        <!--{{ car.description }}-->
+        <img src="{{ car.img.url }}"width="300" height="200" alt="картинки"/>
+   {% endfor %}
+</div>
+{% endblock content%}
