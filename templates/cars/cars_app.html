@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+<title>Title</title>
+</head>
+<body>
+<h2>Rendering from vue.js</h2>
+{% verbatim %}
+<div class="container" id="cars_app">
+    <div class="btn btn-success btn-lg" v-for="car in cars">
+        <p>{{ car.user }}</p>
+        <p>{{ car.manufacturer }}</p>
+        <p>{{ car.model }}</p>
+        <p><img src="{{ car.image }}" width="200" height="200"/>Картинка:</p>
+        <p>{{ car.made_data }}</p>
+        <p>{{ car.milleage }}</p>
+        <p>{{ car.price }}</p>
+    </div>
+</div>
+{% endverbatim %}
+<script src="/static/js/base.js"></script>
+</body>
+</html>

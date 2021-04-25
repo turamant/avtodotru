@@ -3,15 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../myShopVue/base.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 	<title>{% block title %} -= My programm=- {% endblock title %}</title>
 </head>
 <body>
 <h2>Главная страница сайта</h2>
 <div class="btn btn-success btn-lg">
-<a href="{% url 'list_car' %}"> Все автомобили</a> |
-<a href="{% url 'list_posters' %}">Все постеры</a>
+	<a href="{% url 'list_car' %}"> Все автомобили</a>
+</div>
+<div class="btn btn-success btn-lg">
+	<a href="{% url 'list_car_published' %}"> Только опубликованые автобили</a>
+</div>
+<div class="btn btn-success btn-lg">
+	<a href="{% url 'list_posters' %}">Все постеры</a>
 </div>
 <div>
 {% block content %}

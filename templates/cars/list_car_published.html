@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+Car list
+{% endblock title%}
+
+{% block content %}
+<h2>Все опубликованые автомобили в БД</h2>
+<ul>
+{% for car in cars_published %}
+    <li><a href="{{ car.get_absolute_url }}">{{ car }}</a></li>
+{% endfor %}
+</ul>
+{% endblock content%}
